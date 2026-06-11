@@ -11,7 +11,7 @@ st.set_page_config(
 
 
 resultados_reais = {
-
+    1: {"gols_a": 2, "gols_b": 0}
 }
 
 jogos_grupos = [

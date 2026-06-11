@@ -2,6 +2,14 @@ import streamlit as st
 import gspread
 import pandas as pd
 
+
+st.set_page_config(
+    page_title="Bolão Copa 2026 🏆", 
+    page_icon="⚽", 
+    layout="centered"
+)
+
+
 resultados_reais = {
 
 }
@@ -303,7 +311,7 @@ else:
         
         # Espaço reservado em branco (com um container temporário)
         st.write("")
-        st.info("Este espaço está reservado!")
+        st.info("Bem-vindo ao Bolão da Copa do Mundo de 2026 dos mos. Faça seus palpites para cada jogos, acumule pontos e ganhe recompensas :)")
         
         # Você pode deixar linhas vazias ou um container vazio por enquanto:
         placeholder_futuro = st.container()

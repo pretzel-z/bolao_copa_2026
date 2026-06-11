@@ -288,7 +288,7 @@ else:
     # CONFIGURAÇÃO DA BARRA LATERAL (SIDEBAR)
     # ==========================================
     with st.sidebar:
-        st.markdown(f"### 👤 Olá, {usuario_atual} mo!")
+        st.markdown(f"### 👤 Olá, {usuario_atual}!")
         st.write("Escolha uma opção abaixo:")
 
         menu = st.sidebar.radio(

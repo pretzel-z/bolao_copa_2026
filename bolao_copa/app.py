@@ -374,9 +374,20 @@ else:
                                 st.markdown(Geist_texto, unsafe_allow_html=True)
                             with col_bandeira:
                                 st.image(get_flag_url(jogo['time_B']), width=25)
-                            
+                        
                         if jogo_finalizado:
-                            st.caption("🔒 Jogo encerrado")
+                            real_a = resultados_reais[jogo['id']]['gols_a']
+                            real_b = resultados_reais[jogo['id']]['gols_b']
+                            
+                            pts = calcular_pontos(gols_a_salvo, gols_b_salvo, real_a, real_b)
+                            
+                            if pts == 2:
+                                st.warning(f"🎯 **Cravou o placar!**")
+                            elif pts == 1:
+                                st.success(f"✅ **Acertou o resultado!**")
+                            else:
+                                st.error(f"❌ **Errou.**")
+                        
                         st.write("")
 
             st.divider()

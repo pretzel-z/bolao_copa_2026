@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#009C3B"          # Verde (usado em botões, links e na barra de progresso)
+backgroundColor = "#FFFFFF"       # Branco (fundo principal para leitura limpa)
+secondaryBackgroundColor = "#FFDF00" # Amarelo (fundo do menu lateral e caixas de destaque)
+textColor = "#202020"             # Preto/Cinza escuro (para os textos ficarem bem legíveis)
+font = "sans serif"

@@ -110,7 +110,9 @@ mapa_bandeiras = {
 
 @st.cache_resource
 def get_google_client():
-    return gspread.service_account(filename='credenciais.json')
+    # CORREÇÃO AQUI: Em vez de buscar o arquivo, puxamos do painel Secrets do Streamlit
+    credenciais_toml = st.secrets["gcp_service_account"]
+    return gspread.service_account_from_dict(credenciais_toml)
 
 def conectar_sheets():
     # Pega o cliente já conectado (ou cria se for a primeira vez)

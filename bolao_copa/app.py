@@ -364,7 +364,7 @@ else:
                                 st.number_input("Gols A", min_value=0, max_value=20, step=1, value=gols_a_salvo, placeholder="0", disabled=jogo_finalizado, key=f"gols_a_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
                         with col3:
                             st.markdown("<h4 style='text-align: center; color: gray;'>X</h4>", unsafe_allow_html=True)
-                          with col4:
+                        with col4:
                             st.number_input("Gols B", min_value=0, max_value=20, step=1, value=gols_b_salvo, placeholder="0", disabled=jogo_finalizado, key=f"gols_b_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
                         with col5:
                             col_nome, col_bandeira = st.columns([4, 1])

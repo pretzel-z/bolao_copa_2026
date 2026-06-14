@@ -380,17 +380,17 @@ else:
                             real_b = resultados_reais[jogo['id']]['gols_b']
                             
                             if palpite_salvo is None:
-                                st.info(f"🤷 **Nenhum palpite feito.** O jogo terminou em {real_a} x {real_b}.")
+                                st.info(f"🤷 **Nenhum palpite feito.**")
                             
                             else:
                                 pts = calcular_pontos(gols_a_salvo, gols_b_salvo, real_a, real_b)
                                 
                                 if pts == 2:
-                                    st.warning(f"🎯 **Cravou o placar!** O jogo foi {real_a} x {real_b}.")
+                                    st.warning(f"🎯 **Cravou o placar!**")
                                 elif pts == 1:
-                                    st.success(f"✅ **Acertou o resultado!** O jogo foi {real_a} x {real_b}.")
+                                    st.success(f"✅ **Acertou o resultado!**")
                                 else:
-                                    st.error(f"❌ **Errou.** O jogo foi {real_a} x {real_b}.")
+                                    st.error(f"❌ **Errou.**")
                         
                         st.write("")
 

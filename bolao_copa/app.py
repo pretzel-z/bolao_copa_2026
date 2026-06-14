@@ -11,7 +11,9 @@ st.set_page_config(
 
 
 resultados_reais = {
-    1: {"gols_a": 2, "gols_b": 0}, 2: {"gols_a": 2, "gols_b": 1}, 4: {"gols_a": 4, "gols_b": 1}
+    1: {"gols_a": 2, "gols_b": 0}, 2: {"gols_a": 2, "gols_b": 1}, 3: {"gols_a": 1, "gols_b": 1}, 
+    4: {"gols_a": 4, "gols_b": 1}, 5: {"gols_a": 1, "gols_b": 1}, 6: {"gols_a": 1, "gols_b": 1}, 
+    7: {"gols_a": 0, "gols_b": 1}, 8: {"gols_a": 2, "gols_b": 0}, 9: {"gols_a": 6, "gols_b": 1}, 
 }
 
 jogos_grupos = [
@@ -24,8 +26,8 @@ jogos_grupos = [
             {"id": 7, "data": "13/06 - 22h00", "time_A": "Haiti", "time_B": "Escócia"},
             {"id": 8, "data": "13/06 - 01h00", "time_A": "Austrália", "time_B": "Turquia"},
             {"id": 9, "data": "14/06 - 14h00", "time_A": "Alemanha", "time_B": "Curaçau"},
-            {"id": 10, "data": "14/06 - 17h00", "time_A": "Costa do Marfim", "time_B": "Equador"},
-            {"id": 11, "data": "14/06 - 20h00", "time_A": "Holanda", "time_B": "Japão"},
+            {"id": 11, "data": "14/06 - 17h00", "time_A": "Holanda", "time_B": "Japão"},
+            {"id": 10, "data": "14/06 - 20h00", "time_A": "Costa do Marfim", "time_B": "Equador"},
             {"id": 12, "data": "14/06 - 23h00", "time_A": "Suécia", "time_B": "Tunísia"},
             {"id": 13, "data": "15/06 - 13h00", "time_A": "Espanha", "time_B": "Cabo Verde"},
             {"id": 14, "data": "15/06 - 16h00", "time_A": "Arábia Saudita", "time_B": "Uruguai"},
@@ -144,11 +146,9 @@ def salvar_palpite(usuario, jogo_id, gols_a, gols_b):
         mask = pd.Series([False] * len(df))
 
     if mask.any():
-        # Se encontrou, atualiza (o +2 é porque a planilha começa na linha 1 + cabeçalho)
         linha_idx = df[mask].index[0] + 2
         sh.update(f"C{linha_idx}:D{linha_idx}", [[gols_a, gols_b]])
     else:
-        # Se não encontrou, adiciona nova linha
         sh.append_row([usuario, jogo_id, gols_a, gols_b])
 
 
@@ -176,7 +176,6 @@ def calcular_pontos(palpite_a, palpite_b, real_a, real_b):
     return 0
 
 
-# Função para calcular o ranking geral atualizado em tempo real
 def calcular_ranking():
     todos_palpites = carregar_palpites()
     pontos = {"Peterson": 0, "Kathy": 0}
@@ -350,9 +349,9 @@ else:
                         palpites_usuario = [p for p in todos_palpites if str(p['Jogador']) == usuario_atual]
                         palpite_salvo = next((p for p in palpites_usuario if int(p['Jogo_ID']) == jogo['id']), None)
                             
-                        gols_a_salvo = int(palpite_salvo['Gols_A']) if palpite_salvo else 0
-                        gols_b_salvo = int(palpite_salvo['Gols_B']) if palpite_salvo else 0
-                            
+                        gols_a_salvo = int(palpite_salvo['Gols_A']) if palpite_salvo else None
+                        gols_b_salvo = int(palpite_salvo['Gols_B']) if palpite_salvo else None
+                                                    
                         col1, col2, col3, col4, col5 = st.columns([3, 2, 1, 2, 3])
                             
                         with col1:
@@ -361,12 +360,12 @@ else:
                                 st.image(get_flag_url(jogo['time_A']), width=25)
                             with col_nome:
                                 st.markdown(f"<p style='font-size: 14px; margin-top: 5px;'>{jogo['time_A']}</p>", unsafe_allow_html=True)
-                        with col2:
-                            st.number_input("Gols A", min_value=0, max_value=20, step=1, value=gols_a_salvo, disabled=jogo_finalizado, key=f"gols_a_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
+                            with col2:
+                                st.number_input("Gols A", min_value=0, max_value=20, step=1, value=gols_a_salvo, placeholder="0", disabled=jogo_finalizado, key=f"gols_a_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
                         with col3:
                             st.markdown("<h4 style='text-align: center; color: gray;'>X</h4>", unsafe_allow_html=True)
-                        with col4:
-                            st.number_input("Gols B", min_value=0, max_value=20, step=1, value=gols_b_salvo, disabled=jogo_finalizado, key=f"gols_b_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
+                          with col4:
+                            st.number_input("Gols B", min_value=0, max_value=20, step=1, value=gols_b_salvo, placeholder="0", disabled=jogo_finalizado, key=f"gols_b_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
                         with col5:
                             col_nome, col_bandeira = st.columns([4, 1])
                             with col_nome:
@@ -391,25 +390,25 @@ else:
                         st.write("")
 
             st.divider()
-                
-            # Botão de Salvar
+            
             if st.button("💾 Salvar Meus Palpites", use_container_width=True):
                 houve_mudanca = False 
                 
                 with st.spinner("Salvando palpites..."):
                     for j in jogos_grupos:
                         if j['id'] not in resultados_reais:
-                            v_a = st.session_state.get(f"gols_a_{j['id']}_{usuario_atual}", 0)
-                            v_b = st.session_state.get(f"gols_b_{j['id']}_{usuario_atual}", 0)
+                            v_a = st.session_state.get(f"gols_a_{j['id']}_{usuario_atual}")
+                            v_b = st.session_state.get(f"gols_b_{j['id']}_{usuario_atual}")
                             
-                            palpite_salvo = next((p for p in todos_palpites if int(p['Jogo_ID']) == j['id'] and str(p['Jogador']) == usuario_atual), None)
-                            
-                            is_novo_palpite = not palpite_salvo and (v_a != 0 or v_b != 0)
-                            is_palpite_editado = palpite_salvo and (int(palpite_salvo['Gols_A']) != v_a or int(palpite_salvo['Gols_B']) != v_b)
-                            
-                            if is_novo_palpite or is_palpite_editado:
-                                salvar_palpite(usuario_atual, j['id'], v_a, v_b)
-                                houve_mudanca = True
+                            if v_a is not None and v_b is not None:
+                                palpite_salvo = next((p for p in todos_palpites if int(p['Jogo_ID']) == j['id'] and str(p['Jogador']) == usuario_atual), None)
+                                
+                                is_novo_palpite = not palpite_salvo
+                                is_palpite_editado = palpite_salvo and (int(palpite_salvo['Gols_A']) != v_a or int(palpite_salvo['Gols_B']) != v_b)
+                                
+                                if is_novo_palpite or is_palpite_editado:
+                                    salvar_palpite(usuario_atual, j['id'], v_a, v_b)
+                                    houve_mudanca = True
                         
                 if houve_mudanca:
                     st.cache_data.clear()

@@ -375,17 +375,22 @@ else:
                                 st.image(get_flag_url(jogo['time_B']), width=25)
                         
                         if jogo_finalizado:
+
                             real_a = resultados_reais[jogo['id']]['gols_a']
                             real_b = resultados_reais[jogo['id']]['gols_b']
                             
-                            pts = calcular_pontos(gols_a_salvo, gols_b_salvo, real_a, real_b)
+                            if palpite_salvo is None:
+                                st.info(f"🤷 **Nenhum palpite feito.** O jogo terminou em {real_a} x {real_b}.")
                             
-                            if pts == 2:
-                                st.warning(f"🎯 **Cravou o placar!**")
-                            elif pts == 1:
-                                st.success(f"✅ **Acertou o resultado!**")
                             else:
-                                st.error(f"❌ **Errou.**")
+                                pts = calcular_pontos(gols_a_salvo, gols_b_salvo, real_a, real_b)
+                                
+                                if pts == 2:
+                                    st.warning(f"🎯 **Cravou o placar!** O jogo foi {real_a} x {real_b}.")
+                                elif pts == 1:
+                                    st.success(f"✅ **Acertou o resultado!** O jogo foi {real_a} x {real_b}.")
+                                else:
+                                    st.error(f"❌ **Errou.** O jogo foi {real_a} x {real_b}.")
                         
                         st.write("")
 

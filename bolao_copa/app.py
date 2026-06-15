@@ -13,7 +13,8 @@ st.set_page_config(
 resultados_reais = {
     1: {"gols_a": 2, "gols_b": 0}, 2: {"gols_a": 2, "gols_b": 1}, 3: {"gols_a": 1, "gols_b": 1}, 
     4: {"gols_a": 4, "gols_b": 1}, 5: {"gols_a": 1, "gols_b": 1}, 6: {"gols_a": 1, "gols_b": 1}, 
-    7: {"gols_a": 0, "gols_b": 1}, 8: {"gols_a": 2, "gols_b": 0}, 9: {"gols_a": 6, "gols_b": 1}, 
+    7: {"gols_a": 0, "gols_b": 1},  9: {"gols_a": 6, "gols_b": 1},
+    10: {"gols_a": 2, "gols_b": 2}, 11: {"gols_a": 1, "gols_b": 0},
 }
 
 jogos_grupos = [

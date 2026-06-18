@@ -17,7 +17,8 @@ resultados_reais = {
     10: {"gols_a": 2, "gols_b": 2}, 11: {"gols_a": 1, "gols_b": 0}, 12: {"gols_a": 5, "gols_b": 1}, 
     13: {"gols_a": 0, "gols_b": 0}, 14: {"gols_a": 1, "gols_b": 1}, 15: {"gols_a": 1, "gols_b": 1},
     16: {"gols_a": 2, "gols_b": 2},  17: {"gols_a": 3, "gols_b": 1}, 18: {"gols_a": 1, "gols_b": 4}, 
-    19: {"gols_a": 3, "gols_b": 0}
+    19: {"gols_a": 3, "gols_b": 0}, 20: {"gols_a": 3, "gols_b": 1}, 21: {"gols_a": 1, "gols_b": 1}, 
+    22: {"gols_a": 4, "gols_b": 2}, 23: {"gols_a": 1, "gols_b": 0}, 24: {"gols_a": 1, "gols_b": 3}, 
 }
 
 jogos_grupos = [

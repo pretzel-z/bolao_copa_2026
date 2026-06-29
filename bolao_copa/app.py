@@ -103,6 +103,25 @@ jogos_grupos = [
             {"id": 72, "data": "27/06 - 23h00", "time_A": "Argélia", "time_B": "Áustria"}
         ]
 
+jogos_eliminatorias = [
+    {"id": 73, "fase": "16-avos de Final", "time_a": "África do Sul", "time_b": "Canadá","data": "28/06 - 13:00"}, 
+    {"id": 74, "fase": "16-avos de Final", "time_a": "Brasil", "time_b": "Japão", "data": "29/06 - 14:00"}, 
+    {"id": 75, "fase": "16-avos de Final", "time_a": "Alemanha", "time_b": "Paraguai", "data": "29/06 - 14:00"}, 
+    {"id": 76, "fase": "16-avos de Final", "time_a": "Holanda", "time_b": "Marrocos", "data": "29/06 - 14:00"}, 
+    {"id": 77, "fase": "16-avos de Final", "time_a": "Costa do Marfim", "time_b": "Noruega", "data": "29/06 - 14:00"}, 
+    {"id": 78, "fase": "16-avos de Final", "time_a": "França", "time_b": "Suécia", "data": "29/06 - 14:00"}, 
+    {"id": 79, "fase": "16-avos de Final", "time_a": "México", "time_b": "Equador", "data": "29/06 - 14:00"}, 
+    {"id": 80, "fase": "16-avos de Final", "time_a": "Inglaterra", "time_b": "RD Congo", "data": "29/06 - 14:00"}, 
+    {"id": 81, "fase": "16-avos de Final", "time_a": "Bélgica", "time_b": "Senegal", "data": "29/06 - 14:00"}, 
+    {"id": 82, "fase": "16-avos de Final", "time_a": "Estados Unidos", "time_b": "Bósnia e Herzegovina", "data": "29/06 - 14:00"}, 
+    {"id": 83, "fase": "16-avos de Final", "time_a": "Espanha", "time_b": "Áustria", "data": "29/06 - 14:00"}, 
+    {"id": 84, "fase": "16-avos de Final", "time_a": "Portugal", "time_b": "Croácia", "data": "29/06 - 14:00"}, 
+    {"id": 85, "fase": "16-avos de Final", "time_a": "Suíça", "time_b": "Argélia", "data": "29/06 - 14:00"}, 
+    {"id": 86, "fase": "16-avos de Final", "time_a": "Austrália", "time_b": "Egito", "data": "29/06 - 14:00"}, 
+    {"id": 87, "fase": "16-avos de Final", "time_a": "Argentina", "time_b": "Cabo Verde", "data": "29/06 - 14:00"}, 
+    {"id": 74, "fase": "16-avos de Final", "time_a": "Colombia", "time_b": "Gana", "data": "29/06 - 14:00"}, 
+]
+
 mapa_bandeiras = {
     "Brasil": "br", "México": "mx", "Alemanha": "de", "Argentina": "ar", 
     "Portugal": "pt", "Inglaterra": "gb-eng", "Espanha": "es", "França": "fr", 
@@ -438,8 +457,82 @@ else:
             st.divider()
                 
         with aba_eliminatorias:
-            st.header("Mata-Mata")
-            st.info("Os jogos desta fase ainda serão decididos.")
+            st.subheader("🔥 Fase Eliminatória")
+            st.write("Dê seus palpites para os jogos do Mata-Mata. O placar válido é o do tempo normal (90 min).")
+            
+            # Agrupa os jogos pela fase (Oitavas, Quartas, etc.)
+            fase_atual = ""
+            
+            for jogo in jogos_eliminatorias:
+                # Cria um divisor visual sempre que mudar de fase
+                if jogo['fase'] != fase_atual:
+                    fase_atual = jogo['fase']
+                    st.markdown(f"### {fase_atual}")
+                    st.divider()
+                
+                # Pega o palpite salvo (exatamente como nos grupos)
+                palpite_salvo = next((p for p in todos_palpites if int(p['Jogo_ID']) == jogo['id'] and str(p['Jogador']) == usuario_atual), None)
+                
+                gols_a_salvo = int(palpite_salvo['Gols_A']) if palpite_salvo else None
+                gols_b_salvo = int(palpite_salvo['Gols_B']) if palpite_salvo else None
+                
+                jogo_finalizado = jogo['id'] in resultados_reais
+                
+                # O layout de colunas para os palpites
+                col1, col2, col3, col4, col5 = st.columns([3, 1, 0.5, 1, 3])
+                
+                with col1:
+                    st.write(f"**{jogo['time_a']}**")
+                with col2:
+                    st.number_input("Gols A", min_value=0, max_value=20, step=1, value=gols_a_salvo, placeholder="0", disabled=jogo_finalizado, key=f"gols_a_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
+                with col3:
+                    st.markdown("<h4 style='text-align: center; margin: 0;'>X</h4>", unsafe_allow_html=True)
+                with col4:
+                    st.number_input("Gols B", min_value=0, max_value=20, step=1, value=gols_b_salvo, placeholder="0", disabled=jogo_finalizado, key=f"gols_b_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
+                with col5:
+                    st.write(f"**{jogo['time_b']}**")
+                    st.caption(f"📅 {jogo['data']} - {jogo['horario']}")
+                    
+                # O Feedback Visual (Amarelo, Verde, Vermelho, Azul)
+                if jogo_finalizado:
+                    real_a = resultados_reais[jogo['id']]['gols_a']
+                    real_b = resultados_reais[jogo['id']]['gols_b']
+                    
+                    if palpite_salvo is None:
+                        st.info(f"🤷 **Nenhum palpite feito.** O tempo normal terminou em {real_a} x {real_b}.")
+                    else:
+                        pts = calcular_pontos(gols_a_salvo, gols_b_salvo, real_a, real_b)
+                        if pts == 2:
+                            st.warning(f"🎯 **Cravou o placar!** O jogo foi {real_a} x {real_b}.")
+                        elif pts == 1:
+                            st.success(f"✅ **Acertou o resultado!** O jogo foi {real_a} x {real_b}.")
+                        else:
+                            st.error(f"❌ **Errou.** O jogo foi {real_a} x {real_b}.")
+                            
+                st.write("") # Espaço entre os jogos
+        
+            # Botão de Salvar da Aba Mata-Mata
+            if st.button("💾 Salvar Palpites do Mata-Mata", use_container_width=True, key="btn_salvar_mata_mata"):
+                houve_mudanca = False 
+                with st.spinner("Salvando..."):
+                    for j in jogos_eliminatorias:
+                        if j['id'] not in resultados_reais:
+                            v_a = st.session_state.get(f"gols_a_{j['id']}_{usuario_atual}")
+                            v_b = st.session_state.get(f"gols_b_{j['id']}_{usuario_atual}")
+                            
+                            if v_a is not None and v_b is not None:
+                                p_salvo = next((p for p in todos_palpites if int(p['Jogo_ID']) == j['id'] and str(p['Jogador']) == usuario_atual), None)
+                                if not p_salvo or (int(p_salvo['Gols_A']) != v_a or int(p_salvo['Gols_B']) != v_b):
+                                    salvar_palpite(usuario_atual, j['id'], v_a, v_b)
+                                    houve_mudanca = True
+                                    
+                if houve_mudanca:
+                    st.cache_data.clear()
+                    st.success("Palpites do Mata-Mata salvos!")
+                else:
+                    st.info("Nenhuma alteração nova.")
+                st.rerun()
+                
 
     # ==========================================
     # SEÇÃO 2: RANKING

@@ -129,7 +129,7 @@ jogos_eliminatorias = [
     {"id": 85, "fase": "16-avos de Final", "time_a": "Suíça", "time_b": "Argélia", "data": "03/07 - 00:00"}, 
     {"id": 86, "fase": "16-avos de Final", "time_a": "Austrália", "time_b": "Egito", "data": "03/07 - 15:00"}, 
     {"id": 87, "fase": "16-avos de Final", "time_a": "Argentina", "time_b": "Cabo Verde", "data": "03/07 - 19:00"}, 
-    {"id": 74, "fase": "16-avos de Final", "time_a": "Colombia", "time_b": "Gana", "data": "03/07 - 22:30"}
+    {"id": 88, "fase": "16-avos de Final", "time_a": "Colombia", "time_b": "Gana", "data": "03/07 - 22:30"}
 ]
 
 mapa_bandeiras = {

@@ -110,7 +110,7 @@ jogos_grupos = [
             {"id": 69, "data": "27/06 - 20h30", "time_A": "Colômbia", "time_B": "Portugal"},
             {"id": 70, "data": "27/06 - 20h30", "time_A": "RD Congo", "time_B": "Uzbequistão"},
             {"id": 71, "data": "27/06 - 23h00", "time_A": "Argélia", "time_B": "Áustria"},
-            {"id": 72, "data": "27/06 - 23h00", "time_A": "Jordânia", "time_B": "Argentina"},
+            {"id": 72, "data": "27/06 - 23h00", "time_A": "Jordânia", "time_B": "Argentina"}
         ]
 
 jogos_eliminatorias = [

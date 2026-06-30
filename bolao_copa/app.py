@@ -111,7 +111,6 @@ jogos_grupos = [
             {"id": 72, "data": "27/06 - 23h00", "time_A": "Jordânia", "time_B": "Argentina"}
         ]
 
-# Ajustei o ID duplicado (74) e adicionei exemplos genéricos para demonstrar as outras fases.
 jogos_eliminatorias = [
     {"id": 73, "fase": "16-avos de Final", "time_a": "África do Sul", "time_b": "Canadá","data": "28/06 - 13:00"}, 
     {"id": 74, "fase": "16-avos de Final", "time_a": "Brasil", "time_b": "Japão", "data": "29/06 - 14:00"}, 
@@ -130,10 +129,21 @@ jogos_eliminatorias = [
     {"id": 87, "fase": "16-avos de Final", "time_a": "Argentina", "time_b": "Cabo Verde", "data": "03/07 - 19:00"}, 
     {"id": 88, "fase": "16-avos de Final", "time_a": "Colômbia", "time_b": "Gana", "data": "03/07 - 22:30"},
     # Placeholder das outras fases
-    {"id": 89, "fase": "Oitavas de Final", "time_a": "Vencedor 73", "time_b": "Vencedor 74", "data": "04/07 - 16:00"},
-    {"id": 97, "fase": "Quartas de Final", "time_a": "Vencedor 89", "time_b": "Vencedor 90", "data": "09/07 - 16:00"},
-    {"id": 101, "fase": "Semifinal", "time_a": "Vencedor 97", "time_b": "Vencedor 98", "data": "14/07 - 16:00"},
-    {"id": 104, "fase": "Final", "time_a": "Vencedor 101", "time_b": "Vencedor 102", "data": "19/07 - 16:00"}
+    {"id": 89, "fase": "Oitavas de Final", "time_a": "TBD", "time_b": "TBD", "data": "04/07 - 16:00"},
+    {"id": 90, "fase": "Oitavas de Final", "time_a": "TBD", "time_b": "TBD", "data": "04/07 - 16:00"},
+    {"id": 91, "fase": "Oitavas de Final", "time_a": "TBD", "time_b": "TBD", "data": "04/07 - 16:00"},
+    {"id": 92, "fase": "Oitavas de Final", "time_a": "TBD", "time_b": "TBD", "data": "04/07 - 16:00"},
+    {"id": 93, "fase": "Oitavas de Final", "time_a": "TBD", "time_b": "TBD", "data": "04/07 - 16:00"},
+    {"id": 94, "fase": "Oitavas de Final", "time_a": "TBD", "time_b": "TBD", "data": "04/07 - 16:00"},
+    {"id": 95, "fase": "Oitavas de Final", "time_a": "TBD", "time_b": "TBD", "data": "04/07 - 16:00"},
+    {"id": 96, "fase": "Oitavas de Final", "time_a": "TBD", "time_b": "TBD", "data": "04/07 - 16:00"},
+    {"id": 97, "fase": "Quartas de Final", "time_a": "TBD", "time_b": "TBD", "data": "09/07 - 16:00"},
+    {"id": 98, "fase": "Quartas de Final", "time_a": "TBD", "time_b": "TBD", "data": "09/07 - 16:00"},
+    {"id": 99, "fase": "Quartas de Final", "time_a": "TBD", "time_b": "TBD", "data": "09/07 - 16:00"},
+    {"id": 100, "fase": "Quartas de Final", "time_a": "TBD", "time_b": "TBD", "data": "09/07 - 16:00"},
+    {"id": 101, "fase": "Semifinal", "time_a": "TBD", "time_b": "TBD", "data": "14/07 - 16:00"},
+    {"id": 102, "fase": "Semifinal", "time_a": "TBD", "time_b": "TBD", "data": "14/07 - 16:00"},
+    {"id": 104, "fase": "Final", "time_a": "TBD", "time_b": "TBD", "data": "19/07 - 16:00"}
 ]
 
 mapa_bandeiras = {

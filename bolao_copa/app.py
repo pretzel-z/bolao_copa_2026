@@ -129,7 +129,7 @@ jogos_eliminatorias = [
     {"id": 85, "fase": "16-avos de Final", "time_a": "Suíça", "time_b": "Argélia", "data": "03/07 - 00:00"}, 
     {"id": 86, "fase": "16-avos de Final", "time_a": "Austrália", "time_b": "Egito", "data": "03/07 - 15:00"}, 
     {"id": 87, "fase": "16-avos de Final", "time_a": "Argentina", "time_b": "Cabo Verde", "data": "03/07 - 19:00"}, 
-    {"id": 74, "fase": "16-avos de Final", "time_a": "Colombia", "time_b": "Gana", "data": "03/07 - 22:30"}, 
+    {"id": 74, "fase": "16-avos de Final", "time_a": "Colombia", "time_b": "Gana", "data": "03/07 - 22:30"}
 ]
 
 mapa_bandeiras = {
@@ -509,11 +509,11 @@ else:
                     real_b = resultados_reais[jogo['id']]['gols_b']
                     
                     if palpite_salvo is None:
-                        st.info(f"🤷 **Nenhum palpite feito.** O tempo normal terminou em {real_a} x {real_b}.")
+                        st.info(f"🤷 **Nenhum palpite feito.**")
                     else:
                         pts = calcular_pontos(gols_a_salvo, gols_b_salvo, real_a, real_b)
                         if pts == 2:
-                            st.warning(f"🎯 **Cravou o placar!** O jogo foi {real_a} x {real_b}.")
+                            st.warning(f"🎯 **Cravou o placar!**")
                         elif pts == 1:
                             st.success(f"✅ **Acertou o resultado!** O jogo foi {real_a} x {real_b}.")
                         else:

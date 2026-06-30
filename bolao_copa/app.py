@@ -25,7 +25,16 @@ resultados_reais = {
     34: {"gols_a": 2, "gols_b": 1}, 35: {"gols_a": 0, "gols_b": 0}, 36: {"gols_a": 0, "gols_b": 4}, 
     37: {"gols_a": 4, "gols_b": 0}, 38: {"gols_a": 0, "gols_b": 0}, 39: {"gols_a": 2, "gols_b": 2}, 
     40: {"gols_a": 1, "gols_b": 3}, 41: {"gols_a": 2, "gols_b": 0}, 42: {"gols_a": 3, "gols_b": 0}, 
-    43: {"gols_a": 3, "gols_b": 2}, 44: {"gols_a": 1, "gols_b": 2}, 45: {"gols_a": 4, "gols_b": 0}
+    43: {"gols_a": 3, "gols_b": 2}, 44: {"gols_a": 1, "gols_b": 2}, 45: {"gols_a": 4, "gols_b": 0}, 
+    46: {"gols_a": 2, "gols_b": 1}, 47: {"gols_a": 3, "gols_b": 1}, 48: {"gols_a": 0, "gols_b": 3}, 
+    49: {"gols_a": 4, "gols_b": 2}, 51: {"gols_a": 0, "gols_b": 3}, 52: {"gols_a": 1, "gols_b": 0}, 
+    53: {"gols_a": 0, "gols_b": 2}, 54: {"gols_a": 2, "gols_b": 1}, 55: {"gols_a": 1, "gols_b": 1}, 
+    56: {"gols_a": 1, "gols_b": 3}, 57: {"gols_a": 3, "gols_b": 2}, 58: {"gols_a": 0, "gols_b": 0}, 
+    59: {"gols_a": 1, "gols_b": 4}, 60: {"gols_a": 5, "gols_b": 0}, 61: {"gols_a": 0, "gols_b": 0}, 
+    62: {"gols_a": 0, "gols_b": 1}, 63: {"gols_a": 1, "gols_b": 1}, 64: {"gols_a": 1, "gols_b": 5}, 
+    65: {"gols_a": 0, "gols_b": 2}, 66: {"gols_a": 2, "gols_b": 1}, 67: {"gols_a": 0, "gols_b": 0}, 
+    68: {"gols_a": 3, "gols_b": 1}, 69: {"gols_a": 3, "gols_b": 3}, 70: {"gols_a": 1, "gols_b": 3}, 
+    71: {"gols_a": 0, "gols_b": 1}, 72: {"gols_a": 2, "gols_b": 1}, 73: {"gols_a": 1, "gols_b": 1}, 
 }
 
 jogos_grupos = [
@@ -106,20 +115,20 @@ jogos_grupos = [
 jogos_eliminatorias = [
     {"id": 73, "fase": "16-avos de Final", "time_a": "África do Sul", "time_b": "Canadá","data": "28/06 - 13:00"}, 
     {"id": 74, "fase": "16-avos de Final", "time_a": "Brasil", "time_b": "Japão", "data": "29/06 - 14:00"}, 
-    {"id": 75, "fase": "16-avos de Final", "time_a": "Alemanha", "time_b": "Paraguai", "data": "29/06 - 14:00"}, 
-    {"id": 76, "fase": "16-avos de Final", "time_a": "Holanda", "time_b": "Marrocos", "data": "29/06 - 14:00"}, 
-    {"id": 77, "fase": "16-avos de Final", "time_a": "Costa do Marfim", "time_b": "Noruega", "data": "29/06 - 14:00"}, 
-    {"id": 78, "fase": "16-avos de Final", "time_a": "França", "time_b": "Suécia", "data": "29/06 - 14:00"}, 
-    {"id": 79, "fase": "16-avos de Final", "time_a": "México", "time_b": "Equador", "data": "29/06 - 14:00"}, 
-    {"id": 80, "fase": "16-avos de Final", "time_a": "Inglaterra", "time_b": "RD Congo", "data": "29/06 - 14:00"}, 
-    {"id": 81, "fase": "16-avos de Final", "time_a": "Bélgica", "time_b": "Senegal", "data": "29/06 - 14:00"}, 
-    {"id": 82, "fase": "16-avos de Final", "time_a": "Estados Unidos", "time_b": "Bósnia e Herzegovina", "data": "29/06 - 14:00"}, 
-    {"id": 83, "fase": "16-avos de Final", "time_a": "Espanha", "time_b": "Áustria", "data": "29/06 - 14:00"}, 
-    {"id": 84, "fase": "16-avos de Final", "time_a": "Portugal", "time_b": "Croácia", "data": "29/06 - 14:00"}, 
-    {"id": 85, "fase": "16-avos de Final", "time_a": "Suíça", "time_b": "Argélia", "data": "29/06 - 14:00"}, 
-    {"id": 86, "fase": "16-avos de Final", "time_a": "Austrália", "time_b": "Egito", "data": "29/06 - 14:00"}, 
-    {"id": 87, "fase": "16-avos de Final", "time_a": "Argentina", "time_b": "Cabo Verde", "data": "29/06 - 14:00"}, 
-    {"id": 74, "fase": "16-avos de Final", "time_a": "Colombia", "time_b": "Gana", "data": "29/06 - 14:00"}, 
+    {"id": 75, "fase": "16-avos de Final", "time_a": "Alemanha", "time_b": "Paraguai", "data": "29/06 - 17:30"}, 
+    {"id": 76, "fase": "16-avos de Final", "time_a": "Holanda", "time_b": "Marrocos", "data": "29/06 - 22:00"}, 
+    {"id": 77, "fase": "16-avos de Final", "time_a": "Costa do Marfim", "time_b": "Noruega", "data": "30/06 - 14:00"}, 
+    {"id": 78, "fase": "16-avos de Final", "time_a": "França", "time_b": "Suécia", "data": "30/06 - 18:00"}, 
+    {"id": 79, "fase": "16-avos de Final", "time_a": "México", "time_b": "Equador", "data": "30/06 - 22:00"}, 
+    {"id": 80, "fase": "16-avos de Final", "time_a": "Inglaterra", "time_b": "RD Congo", "data": "01/07 - 13:00"}, 
+    {"id": 81, "fase": "16-avos de Final", "time_a": "Bélgica", "time_b": "Senegal", "data": "01/07 - 17:00"}, 
+    {"id": 82, "fase": "16-avos de Final", "time_a": "Estados Unidos", "time_b": "Bósnia e Herzegovina", "data": "01/07 - 21:00"}, 
+    {"id": 83, "fase": "16-avos de Final", "time_a": "Espanha", "time_b": "Áustria", "data": "02/07 - 16:00"}, 
+    {"id": 84, "fase": "16-avos de Final", "time_a": "Portugal", "time_b": "Croácia", "data": "02/07 - 20:00"}, 
+    {"id": 85, "fase": "16-avos de Final", "time_a": "Suíça", "time_b": "Argélia", "data": "03/07 - 00:00"}, 
+    {"id": 86, "fase": "16-avos de Final", "time_a": "Austrália", "time_b": "Egito", "data": "03/07 - 15:00"}, 
+    {"id": 87, "fase": "16-avos de Final", "time_a": "Argentina", "time_b": "Cabo Verde", "data": "03/07 - 19:00"}, 
+    {"id": 74, "fase": "16-avos de Final", "time_a": "Colombia", "time_b": "Gana", "data": "03/07 - 22:30"}, 
 ]
 
 mapa_bandeiras = {
@@ -491,7 +500,7 @@ else:
                     st.number_input("Gols B", min_value=0, max_value=20, step=1, value=gols_b_salvo, placeholder="0", disabled=jogo_finalizado, key=f"gols_b_{jogo['id']}_{usuario_atual}", label_visibility="collapsed")
                 with col5:
                     st.write(f"**{jogo['time_b']}**")
-                    st.caption(f"📅 {jogo['data']} - {jogo['horario']}")
+                    st.caption(f"{jogo['data']}")
                     
                 # O Feedback Visual (Amarelo, Verde, Vermelho, Azul)
                 if jogo_finalizado:

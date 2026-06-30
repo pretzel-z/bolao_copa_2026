@@ -27,14 +27,15 @@ resultados_reais = {
     40: {"gols_a": 1, "gols_b": 3}, 41: {"gols_a": 2, "gols_b": 0}, 42: {"gols_a": 3, "gols_b": 0}, 
     43: {"gols_a": 3, "gols_b": 2}, 44: {"gols_a": 1, "gols_b": 2}, 45: {"gols_a": 5, "gols_b": 0}, 
     46: {"gols_a": 0, "gols_b": 0}, 47: {"gols_a": 0, "gols_b": 1}, 48: {"gols_a": 1, "gols_b": 0}, 
-    49: {"gols_a": 4, "gols_b": 2}, 51: {"gols_a": 0, "gols_b": 3}, 52: {"gols_a": 1, "gols_b": 0}, 
-    53: {"gols_a": 0, "gols_b": 2}, 54: {"gols_a": 2, "gols_b": 1}, 55: {"gols_a": 1, "gols_b": 1}, 
-    56: {"gols_a": 1, "gols_b": 3}, 57: {"gols_a": 3, "gols_b": 2}, 58: {"gols_a": 0, "gols_b": 0}, 
-    59: {"gols_a": 1, "gols_b": 4}, 60: {"gols_a": 5, "gols_b": 0}, 61: {"gols_a": 0, "gols_b": 0}, 
-    62: {"gols_a": 0, "gols_b": 1}, 63: {"gols_a": 1, "gols_b": 1}, 64: {"gols_a": 1, "gols_b": 5}, 
-    65: {"gols_a": 0, "gols_b": 2}, 66: {"gols_a": 2, "gols_b": 1}, 67: {"gols_a": 0, "gols_b": 0}, 
-    68: {"gols_a": 3, "gols_b": 1}, 69: {"gols_a": 3, "gols_b": 3}, 70: {"gols_a": 1, "gols_b": 3}, 
-    71: {"gols_a": 0, "gols_b": 1}, 72: {"gols_a": 2, "gols_b": 1}, 73: {"gols_a": 1, "gols_b": 1}, 
+    49: {"gols_a": 2, "gols_b": 1}, 50: {"gols_a": 3, "gols_b": 1}, 51: {"gols_a": 0, "gols_b": 3}, 
+    52: {"gols_a": 4, "gols_b": 2}, 53: {"gols_a": 0, "gols_b": 3}, 54: {"gols_a": 1, "gols_b": 0}, 
+    55: {"gols_a": 0, "gols_b": 2}, 56: {"gols_a": 2, "gols_b": 1}, 57: {"gols_a": 1, "gols_b": 1}, 
+    58: {"gols_a": 1, "gols_b": 3}, 59: {"gols_a": 3, "gols_b": 2}, 60: {"gols_a": 0, "gols_b": 0}, 
+    61: {"gols_a": 1, "gols_b": 4}, 62: {"gols_a": 5, "gols_b": 0}, 63: {"gols_a": 0, "gols_b": 0}, 
+    64: {"gols_a": 0, "gols_b": 1}, 65: {"gols_a": 1, "gols_b": 1}, 66: {"gols_a": 1, "gols_b": 5}, 
+    67: {"gols_a": 0, "gols_b": 2}, 68: {"gols_a": 2, "gols_b": 1}, 69: {"gols_a": 0, "gols_b": 0}, 
+    70: {"gols_a": 3, "gols_b": 1}, 71: {"gols_a": 3, "gols_b": 3}, 72: {"gols_a": 1, "gols_b": 3}, 
+    73: {"gols_a": 0, "gols_b": 1}, 74: {"gols_a": 2, "gols_b": 1}, 75: {"gols_a": 1, "gols_b": 1}, 
 }
 
 jogos_grupos = [
